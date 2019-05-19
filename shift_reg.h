@@ -28,6 +28,7 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once. 
+// FOR IC 74HC595
 #define _XTAL_FREQ 8000000
 #include <xc.h>
 #define DATA    LATC0
