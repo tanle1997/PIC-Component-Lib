@@ -1,4 +1,3 @@
-#include <xc.h>
 #include "shift_reg.h"
 void latch(void)
 {
