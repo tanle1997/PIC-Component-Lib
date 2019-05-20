@@ -12,10 +12,7 @@ void shift_data(unsigned char n)
     CLK=0;
     for(i=0;i<8;i++)
     {
-        if((n & 0x80) == 0x80)
-            DATA=1;
-        else
-            DATA=0;
+        DATA=((n & 0x80)==0x80);
         __delay_us(2);
         n=n<<1;
         CLK=1;
