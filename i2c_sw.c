@@ -48,7 +48,8 @@ unsigned char i2c_Read(void)
     return n;
 }
 
-void i2c_Ack(void){
+void i2c_Ack(void)
+{
     SCL=0;
     __delay_us(2);
     SDA=0;
@@ -70,7 +71,8 @@ void i2c_NAck(void){
     SCL=1;
 }
 
-void i2c_Stop(void){
+void i2c_Stop(void)
+{
     SCL=0;
     SDA_TRIS = 0;
     SDA=0;
@@ -79,7 +81,8 @@ void i2c_Stop(void){
     __delay_us(2);
     SDA=1;
 }
-void i2c_Start(void){
+void i2c_Start(void)
+{
     SCL=1;
     __delay_us(2);
     SDA=1;
