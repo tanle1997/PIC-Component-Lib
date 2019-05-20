@@ -2,8 +2,10 @@
 #define _XTAL_FREQ 8000000
 #include "i2c_sw.h"
 #include "ic_realtime.h"
+
 #define Wr 0xD0
 #define Rd 0xD1
+
 // read time from ic 
 // must declare hour, minute, second
 void Read_time(unsigned char *hour, unsigned char *minute, unsigned char *second)
