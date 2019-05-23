@@ -9,6 +9,7 @@ void i2c_Init(void)
     SDA=1;
     __delay_us(2);
     SCL=1;
+    __delay_us(2);
 }
 
 void i2c_Write(unsigned char n)
