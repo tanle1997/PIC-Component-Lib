@@ -92,4 +92,5 @@ void i2c_Start(void)
     SDA=0;
     __delay_us(2);
     SCL = 0;
+    __delay_us(2);
 }
