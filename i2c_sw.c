@@ -4,9 +4,9 @@ void i2c_Init(void)
 {
     SCL=0;
     SCL_TRIS = 0;
-    SDA=0;
-    SDA_TRIS = 0;
+    __delay_us(2);
     SDA=1;
+    SDA_TRIS = 0;
     __delay_us(2);
     SCL=1;
     __delay_us(2);
@@ -66,6 +66,7 @@ void i2c_Ack(void)
 
 void i2c_NAck(void){
     SCL=0;
+    __delay_us(2);
     SDA=1;
     SDA_TRIS=0;
     __delay_us(2);
@@ -75,6 +76,7 @@ void i2c_NAck(void){
 void i2c_Stop(void)
 {
     SCL=0;
+    __delay_us(2);
     SDA_TRIS = 0;
     SDA=0;
     __delay_us(2);
@@ -82,6 +84,7 @@ void i2c_Stop(void)
     __delay_us(2);
     SDA=1;
 }
+
 void i2c_Start(void)
 {
     SCL=1;
