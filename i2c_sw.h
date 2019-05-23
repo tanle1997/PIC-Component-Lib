@@ -1,5 +1,3 @@
-#include <xc.h>
-#define _XTAL_FREQ 8000000
 
 #define SDA_TRIS TRISC4
 #define SCL_TRIS TRISC3
