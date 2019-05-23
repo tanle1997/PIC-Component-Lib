@@ -1,5 +1,7 @@
+#include <xc.h>
 #include "i2c_sw.h"
 
+#define _XTAL_FREQ 8000000
 void i2c_Init(void)
 {
     SCL=0;
