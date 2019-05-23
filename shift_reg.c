@@ -4,6 +4,7 @@ void latch(void)
     LATCH=0;
     __delay_us(2);
     LATCH=1;
+    __delay_us(2);
     LATCH=0;
 }
 void shift_data(unsigned char n)
@@ -16,6 +17,7 @@ void shift_data(unsigned char n)
         __delay_us(2);
         n=n<<1;
         CLK=1;
+        __delay_us(2);
         CLK=0;
     }
 }
