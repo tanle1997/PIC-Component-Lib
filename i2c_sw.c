@@ -66,7 +66,8 @@ void i2c_Ack(void)
     __delay_us(2);
 }
 
-void i2c_NAck(void){
+void i2c_NAck(void)
+{
     SCL=0;
     __delay_us(2);
     SDA=1;
