@@ -15,6 +15,9 @@
 #if BAUDRATE==4800
     #define timeslot 208
 #else
+#if BAUDRATE==4800
+    #define timeslot 208
+#else
 #if BAUDRATE==19200
     #define timeslot 72
 #else
@@ -26,6 +29,7 @@
 #else
 #if BAUDRATE==115200
     #define timeslot 8
+#endif
 #endif
 #endif
 #endif
