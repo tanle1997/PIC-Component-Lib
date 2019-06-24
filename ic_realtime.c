@@ -1,7 +1,8 @@
 #include <xc.h>
-#define _XTAL_FREQ 8000000
 #include "i2c_sw.h"
 #include "ic_realtime.h"
+// MCU SPEED
+#define _XTAL_FREQ 8000000
 
 #define Wr 0xD0
 #define Rd 0xD1
@@ -26,6 +27,7 @@ void Read_time(unsigned char *hour, unsigned char *minute, unsigned char *second
     i2c_NAck();
     i2c_Stop();
 }
+
 void Write_time(unsigned char hour, unsigned char minute, unsigned char second)
 {
     i2c_Start();
@@ -62,6 +64,7 @@ void Read_date(unsigned char *day, unsigned char *date, unsigned char *month, un
     i2c_NAck();
     i2c_Stop();
 }
+
 void Write_date(unsigned char day, unsigned char date, unsigned char month, unsigned char year)
 {
     i2c_Start();
