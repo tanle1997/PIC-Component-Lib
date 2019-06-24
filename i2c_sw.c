@@ -1,7 +1,8 @@
 #include <xc.h>
 #include "i2c_sw.h"
-
+// MCU SPEED
 #define _XTAL_FREQ 8000000
+//Intial interface
 void i2c_Init(void)
 {
     SCL=0;
@@ -13,7 +14,7 @@ void i2c_Init(void)
     SCL=1;
     __delay_us(2);
 }
-
+// Write a Byte
 void i2c_Write(unsigned char n)
 {
     unsigned char i;
@@ -31,7 +32,7 @@ void i2c_Write(unsigned char n)
         __delay_us(2);
     }
 }
-
+// Read a Byte
 unsigned char i2c_Read(void)
 {
     unsigned char n = 0,i;
@@ -50,7 +51,7 @@ unsigned char i2c_Read(void)
     }
     return n;
 }
-
+// Ack feedback
 void i2c_Ack(void)
 {
     SCL=0;
@@ -65,7 +66,7 @@ void i2c_Ack(void)
     SDA=1;
     __delay_us(2);
 }
-
+// NAck feedback
 void i2c_NAck(void)
 {
     SCL=0;
