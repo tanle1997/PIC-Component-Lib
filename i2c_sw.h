@@ -1,3 +1,5 @@
+#ifndef I2C_SW
+  #define I2C_SW
 
 #define SDA_TRIS TRISC4
 #define SCL_TRIS TRISC3
@@ -11,3 +13,5 @@ void i2c_Ack(void);
 void i2c_NAck(void);
 void i2c_Stop(void);
 void i2c_Start(void);
+
+#endif
