@@ -1,3 +1,5 @@
+#ifndef UART_SW
+  #define UART_SW
 #include <xc.h>
 
 #define _XTAL_FREQ 8000000
@@ -36,10 +38,11 @@
 #endif
 #endif
 #endif
-/////////////////////////////////    
+/////////////////////////////////
 void UARTInit(void);
 void UART_SendByte(unsigned char data);
 void UART_SendStr(unsigned char *data);
 unsigned char UART_ReadByte(void);
 unsigned char* UART_ReadStr(void);
 /////////////////////////////////
+#endif
