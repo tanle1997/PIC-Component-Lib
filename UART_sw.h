@@ -1,5 +1,5 @@
 #ifndef UART_SW
-  #define UART_SW
+    #define UART_SW
 #include <xc.h>
 
 #define _XTAL_FREQ 8000000
