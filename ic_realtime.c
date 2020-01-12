@@ -30,7 +30,7 @@ void Write_time(unsigned char hour, unsigned char minute, unsigned char second)
     i2c_Start();
     i2c_Write(WrCmd);
     i2c_Ack();
-    i2c_Write(0x00);
+    i2c_Write(SecondAddressRegister);
     i2c_Ack();
     i2c_Write(second);
     i2c_Ack();
@@ -67,7 +67,7 @@ void Write_date(unsigned char day, unsigned char date, unsigned char month, unsi
     i2c_Start();
     i2c_Write(WrCmd);
     i2c_Ack();
-    i2c_Write(0x03);
+    i2c_Write(DayAddressRegister);
     i2c_Ack();
     i2c_Write(day);
     i2c_Ack();
