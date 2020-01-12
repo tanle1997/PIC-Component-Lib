@@ -4,20 +4,17 @@
 // MCU SPEED
 #define _XTAL_FREQ 8000000
 
-#define Wr (0xD0)
-#define Rd (0xD1)
-
 // read time from ic 
 // must declare hour, minute, second
 void Read_time(unsigned char *hour, unsigned char *minute, unsigned char *second)
 {
     i2c_Start();
-    i2c_Write(Wr);
+    i2c_Write(WrCmd);
     i2c_Ack();
-    i2c_Write(0x00);
+    i2c_Write(SecondAddressRegister);
     i2c_Ack();
     i2c_Start();
-    i2c_Write(Rd);
+    i2c_Write(RdCmd);
     i2c_Ack();
     *second = i2c_Read();
     i2c_Ack();
@@ -31,7 +28,7 @@ void Read_time(unsigned char *hour, unsigned char *minute, unsigned char *second
 void Write_time(unsigned char hour, unsigned char minute, unsigned char second)
 {
     i2c_Start();
-    i2c_Write(Wr);
+    i2c_Write(WrCmd);
     i2c_Ack();
     i2c_Write(0x00);
     i2c_Ack();
@@ -47,12 +44,12 @@ void Write_time(unsigned char hour, unsigned char minute, unsigned char second)
 void Read_date(unsigned char *day, unsigned char *date, unsigned char *month, unsigned char *year)
 {
     i2c_Start();
-    i2c_Write(Wr);
+    i2c_Write(WrCmd);
     i2c_Ack();
-    i2c_Write(0x03);
+    i2c_Write(DayAddressRegister);
     i2c_Ack();
     i2c_Start();
-    i2c_Write(Rd);
+    i2c_Write(RdCmd);
     i2c_Ack();
     *day = i2c_Read();
     i2c_Ack();
@@ -68,7 +65,7 @@ void Read_date(unsigned char *day, unsigned char *date, unsigned char *month, un
 void Write_date(unsigned char day, unsigned char date, unsigned char month, unsigned char year)
 {
     i2c_Start();
-    i2c_Write(Wr);
+    i2c_Write(WrCmd);
     i2c_Ack();
     i2c_Write(0x03);
     i2c_Ack();
