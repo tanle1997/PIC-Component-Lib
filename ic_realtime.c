@@ -4,8 +4,8 @@
 // MCU SPEED
 #define _XTAL_FREQ 8000000
 
-#define Wr 0xD0
-#define Rd 0xD1
+#define Wr (0xD0)
+#define Rd (0xD1)
 
 // read time from ic 
 // must declare hour, minute, second
@@ -85,18 +85,18 @@ void Write_date(unsigned char day, unsigned char date, unsigned char month, unsi
 // convert BCD2DEC
 unsigned char bcd2dec(unsigned char num)
 {
-    unsigned char i=0;
-    i=((num&0xF0)>>4);
-    i*=10;
-    i=i|(num&0x0F);
+    unsigned char i = 0;
+    i = ((num & 0xF0) >> 4u);
+    i *= 10;
+    i = i | (num & 0x0F);
     return i;
 }
 //convert DEC2BCD
 unsigned char dec2bcd(unsigned char num)
 {
-    unsigned char i=0;
-    i=num/10;
-    i=i<<4;
-    i=i|(num&0x0f);
+    unsigned char i = 0;
+    i = (num / 10u);
+    i = (i << 4);
+    i = i | (num & 0x0f);
     return i;
 }
