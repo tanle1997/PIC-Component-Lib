@@ -111,9 +111,9 @@ unsigned char i2c_IsAck(void)
     __delay_us(2u);
     SDA_TRIS = 1;
     __delay_us(2u);
+    
+    retVal = SDA; // read Ack(0)/NAck(1)
     SCL = 0;
 
-    retVal = SDA; // read Ack(0)/NAck(1)
-    
     return retVal;
 }
