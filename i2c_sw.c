@@ -102,3 +102,18 @@ void i2c_Start(void)
     SCL = 0;
     __delay_us(2);
 }
+
+unsigned char i2c_IsAck(void)
+{
+    unsigned char retVal;
+ 
+    SCL = 1;
+    __delay_us(2u);
+    SDA_TRIS = 1;
+    __delay_us(2u);
+    SCL = 0;
+
+    retVal = SDA; // read Ack(0)/NAck(1)
+    
+    return retVal;
+}
