@@ -107,6 +107,8 @@ unsigned char i2c_IsAck(void)
 {
     unsigned char retVal;
  
+    SCL = 0;
+    __delay_us(2u);
     SCL = 1;
     __delay_us(2u);
     SDA_TRIS = 1;
