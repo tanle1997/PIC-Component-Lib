@@ -13,5 +13,6 @@ void i2c_Ack(void);
 void i2c_NAck(void);
 void i2c_Stop(void);
 void i2c_Start(void);
+unsigned char i2c_IsAck(void);
 
 #endif
