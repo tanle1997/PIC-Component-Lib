@@ -31,6 +31,7 @@ void i2c_Write(unsigned char n)
         SCL = 1;
         __delay_us(2);
     }
+    SCL = 0;
 }
 // Read a Byte
 unsigned char i2c_Read(void)
@@ -50,6 +51,8 @@ unsigned char i2c_Read(void)
         SCL = 0;
         __delay_us(2);
     }
+    SCL = 0;
+
     return n;
 }
 // Ack feedback
